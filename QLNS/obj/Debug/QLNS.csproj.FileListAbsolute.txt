@@ -1,0 +1,48 @@
+D:\Bac\Do an\Project\QLNS\bin\QLNS.dll
+D:\Bac\Do an\Project\QLNS\bin\QLNS.pdb
+D:\Bac\Do an\Project\QLNS\bin\MyURLRewriting.pdb
+D:\Bac\Do an\Project\QLNS\obj\Debug\ResolveAssemblyReference.cache
+D:\Bac\Do an\Project\QLNS\obj\Debug\QLNS.dll
+D:\Bac\Do an\Project\QLNS\obj\Debug\QLNS.pdb
+D:\Bac\Project\QLNS\QLNS\bin\QLNS.dll
+D:\Bac\Project\QLNS\QLNS\bin\QLNS.pdb
+D:\Bac\Project\QLNS\QLNS\obj\Debug\ResolveAssemblyReference.cache
+D:\Bac\Project\QLNS\QLNS\obj\Debug\QLNS.dll
+D:\Bac\Project\QLNS\QLNS\obj\Debug\QLNS.pdb
+D:\Bac\Project\QLNS\QLNS\bin\MyURLRewriting.pdb
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\bin\QLNS.dll
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\bin\QLNS.pdb
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\bin\MyURLRewriting.dll
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\bin\MyURLRewriting.pdb
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\obj\Debug\ResolveAssemblyReference.cache
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\obj\Debug\QLNS.dll
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\obj\Debug\QLNS.pdb
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\bin\MSCaptcha.xml
+D:\Bac\Project\QLNS\QLNS\bin\MSCaptcha.xml
+D:\Bac\Project\QLNS\QLNS\bin\CKEditor.NET.dll
+D:\Bac\Project\QLNS\QLNS\bin\CKEditor.NET.pdb
+E:\Practise\Thuc tap\Do an\Project\QLNS\QLNS\bin\CKEditor.NET.pdb
+D:\Phuong Bac\Do an\QLNS\QLNS\bin\QLNS.dll
+D:\Phuong Bac\Do an\QLNS\QLNS\bin\QLNS.pdb
+D:\Phuong Bac\Do an\QLNS\QLNS\bin\CKEditor.NET.pdb
+D:\Phuong Bac\Do an\QLNS\QLNS\bin\MyURLRewriting.pdb
+D:\Phuong Bac\Do an\QLNS\QLNS\bin\MSCaptcha.xml
+D:\Phuong Bac\Do an\QLNS\QLNS\obj\Debug\ResolveAssemblyReference.cache
+D:\Phuong Bac\Do an\QLNS\QLNS\obj\Debug\QLNS.dll
+D:\Phuong Bac\Do an\QLNS\QLNS\obj\Debug\QLNS.pdb
+D:\DO AN MON HOC WEB K6CNTT1\Do an mau\DE TAI TOT NGHIEP PM KHOA 5\QLNS\QLNS-Finish-16h00-29-05-2012\QLNS\bin\QLNS.dll.config
+D:\DO AN MON HOC WEB K6CNTT1\Do an mau\DE TAI TOT NGHIEP PM KHOA 5\QLNS\QLNS-Finish-16h00-29-05-2012\QLNS\bin\QLNS.dll
+D:\DO AN MON HOC WEB K6CNTT1\Do an mau\DE TAI TOT NGHIEP PM KHOA 5\QLNS\QLNS-Finish-16h00-29-05-2012\QLNS\bin\QLNS.pdb
+D:\DO AN MON HOC WEB K6CNTT1\Do an mau\DE TAI TOT NGHIEP PM KHOA 5\QLNS\QLNS-Finish-16h00-29-05-2012\QLNS\obj\Debug\QLNS.dll
+D:\DO AN MON HOC WEB K6CNTT1\Do an mau\DE TAI TOT NGHIEP PM KHOA 5\QLNS\QLNS-Finish-16h00-29-05-2012\QLNS\obj\Debug\QLNS.pdb
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\bin\QLNS.dll.config
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\bin\QLNS.dll
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\bin\QLNS.pdb
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\obj\Debug\QLNS.csproj.CoreCompileInputs.cache
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\obj\Debug\QLNS.csproj.CopyComplete
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\obj\Debug\QLNS.dll
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\obj\Debug\QLNS.pdb
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\obj\Debug\QLNS.csproj.AssemblyReference.cache
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\bin\CrystalDecisions.CrystalReports.Engine.dll
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\bin\CrystalDecisions.ReportSource.dll
+G:\Gui NamVmsoft\Gui NamVmsoft\QLNS\bin\CrystalDecisions.Shared.dll

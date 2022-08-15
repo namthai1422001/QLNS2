@@ -1,0 +1,63 @@
+﻿#TreeView
+{
+    color: #57A000;
+}
+#TreeView .Nodes
+{
+    clear: both;
+}
+#TreeView .Head
+{
+    height: 20px;
+    clear: both;
+    color: #FFF;
+    font-weight: bold;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    vertical-align: bottom;
+    padding-top: 5px;
+    background: url('../images/HeaderGlassBlack.jpg') repeat-x center;
+}
+#TreeView .Nodes .Parent
+{
+    clear: both;
+    height: 20px;
+}
+#TreeView .Nodes .Parent span{float:left; padding-top:3px; font-weight: bold;}
+#TreeView .Nodes .Parent .chkParent {float:left; margin-top:3px; margin-right: 2px;}
+#TreeView .Nodes .Parent .StatusImg
+{
+    float: left;
+}
+#TreeView .Nodes .Parent .StatusImg
+{
+    cursor: pointer;
+}
+
+#TreeView .Nodes .Childs
+{
+    clear: both;
+    padding-left: 50px;
+    height: 25px;
+    background-color: #fff;
+}
+#TreeView .Nodes .Childs .chkChilds,#TreeView .Nodes .Childs .Content
+{
+    float: left; padding-top: 3px;
+}
+#TreeView .Nodes .Childs a
+{
+    float: right; padding-top: 3px; padding-right: 5px;
+}
+
+#TreeView .Nodes .Childs[alt=alt]
+{
+    background-color: #f3f3f3;
+}
+
+.Name{width: 100px; display: block; float: left;}
+.Value{width: 120px; display: block; float: left;}
+.Description{width: auto; display: block; float: left;}
+.GroupName{width: 150px; display: block; float: left;}
+.TotalEmployee{width: 170px; display: block; float: left;}
+/*<input type="checkbox" name="chkChilds" class="chkChilds" />*/

@@ -1,0 +1,1079 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="QLNS" Class="dbLinQDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=.\SQLEXPRESS;Initial Catalog=QLNS;User ID=nhansu" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="QLNSConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.DIC_BacLuong" Member="DIC_BacLuongs">
+    <Type Name="DIC_BacLuong">
+      <Column Name="MaNgach" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Bac" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tenbac" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Heso" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_NgachLuong_DIC_BacLuong" Member="DIC_NgachLuong" ThisKey="MaNgach" OtherKey="MaNgach" Type="DIC_NgachLuong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_Quyen" Member="SYS_Quyens">
+    <Type Name="SYS_Quyen">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Rollname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Association Name="SYS_Quyen_SYS_PhanQuyen" Member="SYS_PhanQuyens" ThisKey="ID" OtherKey="RollID" Type="SYS_PhanQuyen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Bangcap" Member="DIC_Bangcaps">
+    <Type Name="DIC_Bangcap">
+      <Column Name="Mabang" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenbang" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Bangcap_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="Mabang" OtherKey="Mabangcap" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Cauhinhcongthuc" Member="DIC_Cauhinhcongthucs">
+    <Type Name="DIC_Cauhinhcongthuc">
+      <Column Name="Macauhinh" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHXH" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHYT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHTN" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHXHMAX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongdoan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PhicongdoanMax" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhThueTNCN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Chinguoiphuthuoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tangcathuong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Tangchunhat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Tangnghile" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Mota" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Chucvu" Member="DIC_Chucvus">
+    <Type Name="DIC_Chucvu">
+      <Column Name="Machucvu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenchucvu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Captren" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Chucvu_PB_Thaydoichucvu" Member="PB_Thaydoichucvus" ThisKey="Machucvu" OtherKey="Machucvu" Type="PB_Thaydoichucvu" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Chuyenmon" Member="DIC_Chuyenmons">
+    <Type Name="DIC_Chuyenmon">
+      <Column Name="Machuyenmon" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenchuyenmon" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Chuyenmon_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="Machuyenmon" OtherKey="Machuyenmon" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Congviec" Member="DIC_Congviecs">
+    <Type Name="DIC_Congviec">
+      <Column Name="Macongviec" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tencongviec" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Congviec_PB_Thaydoicongviec" Member="PB_Thaydoicongviecs" ThisKey="Macongviec" OtherKey="Macongviec" Type="PB_Thaydoicongviec" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Dantoc" Member="DIC_Dantocs">
+    <Type Name="DIC_Dantoc">
+      <Column Name="Madantoc" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tendantoc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Dantoc_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="Madantoc" OtherKey="Madantoc" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_NgachLuong" Member="DIC_NgachLuongs">
+    <Type Name="DIC_NgachLuong">
+      <Column Name="MaNgach" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenNgach" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_NgachLuong_DIC_BacLuong" Member="DIC_BacLuongs" ThisKey="MaNgach" OtherKey="MaNgach" Type="DIC_BacLuong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Ngonngu" Member="DIC_Ngonngus">
+    <Type Name="DIC_Ngonngu">
+      <Column Name="Mangonngu" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenngonngu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Ngonngu_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="Mangonngu" OtherKey="Mangonngu" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Phucap" Member="DIC_Phucaps">
+    <Type Name="DIC_Phucap">
+      <Column Name="Maphucap" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenphucap" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tienlonnhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_Phucap_PB_PhucapNhanvien" Member="PB_PhucapNhanviens" ThisKey="Maphucap" OtherKey="Maphucap" Type="PB_PhucapNhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Quanhegiadinh" Member="DIC_Quanhegiadinhs">
+    <Type Name="DIC_Quanhegiadinh">
+      <Column Name="Maquanhe" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenquanhe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Quanhegiadinh_PB_Nguoithannhanvien" Member="PB_Nguoithannhanviens" ThisKey="Maquanhe" OtherKey="Quanhe" Type="PB_Nguoithannhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Quoctich" Member="DIC_Quoctiches">
+    <Type Name="DIC_Quoctich">
+      <Column Name="Maquoctich" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenquoctich" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Quoctich_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="Maquoctich" OtherKey="Maquoctich" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Tinhoc" Member="DIC_Tinhocs">
+    <Type Name="DIC_Tinhoc">
+      <Column Name="MaTH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTH" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Tinhoc_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="MaTH" OtherKey="Matinhoc" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DIC_Tongiao" Member="DIC_Tongiaos">
+    <Type Name="DIC_Tongiao">
+      <Column Name="MaTG" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenTG" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsActive" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="DIC_Tongiao_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="MaTG" OtherKey="Matongiao" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_ChamcongNhanvien" Member="PB_ChamcongNhanviens">
+    <Type Name="PB_ChamcongNhanvien">
+      <Column Name="Mabangchamcong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Sogiocong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sogionghiphep" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachchamcong_PB_ChamcongNhanvien" Member="PB_Danhsachchamcong" ThisKey="Mabangchamcong" OtherKey="Mabangchamcong" Type="PB_Danhsachchamcong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Chamnghiphep" Member="PB_Chamnghipheps">
+    <Type Name="PB_Chamnghiphep">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Namkinhnghiem" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="Duocnghipheptrongnam" Type="System.Byte" DbType="TinyInt" CanBeNull="true" />
+      <Column Name="T1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T2" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T3" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T4" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T5" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T6" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T7" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T8" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T9" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T10" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T11" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="T12" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="PB_Nhanvien_PB_Chamnghiphep" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Chamtangca" Member="PB_Chamtangcas">
+    <Type Name="PB_Chamtangca">
+      <Column Name="Mabangchamcong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TCthuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TCchunhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TCnghile" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachchamcong_PB_Chamtangca" Member="PB_Danhsachchamcong" ThisKey="Mabangchamcong" OtherKey="Mabangchamcong" Type="PB_Danhsachchamcong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Danhgianhanvien" Member="PB_Danhgianhanviens">
+    <Type Name="PB_Danhgianhanvien">
+      <Column Name="Madanhgia" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhthankyluat" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ketqualamviec" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Daoduc" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhthanhochoi" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhthanlamviec" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Danhgiachung" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Diem" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_Danhgianhanvien" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Danhsachbangluong" Member="PB_Danhsachbangluongs">
+    <Type Name="PB_Danhsachbangluong">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Luongtoithieu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tongsogioquydinh" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tienbatdautinhthue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tienmoinguoiphuthuoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hesothuong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Hesochunhat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Hesonghile" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHXH" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHYT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHTN" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHXHMAX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongdoan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PhicongdoanMax" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsLock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsFinish" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachbangluong_PB_KhautruNhanvien" Member="PB_KhautruNhanviens" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_KhautruNhanvien" />
+      <Association Name="PB_Danhsachbangluong_PB_Luonglamthem" Member="PB_Luonglamthems" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_Luonglamthem" />
+      <Association Name="PB_Danhsachbangluong_PB_Luongtangca" Member="PB_Luongtangcas" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_Luongtangca" />
+      <Association Name="PB_Danhsachbangluong_PB_SoLuong" Member="PB_SoLuongs" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_SoLuong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Danhsachchamcong" Member="PB_Danhsachchamcongs">
+    <Type Name="PB_Danhsachchamcong">
+      <Column Name="Mabangchamcong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Thang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nam" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="IsLock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsFinish" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachchamcong_PB_ChamcongNhanvien" Member="PB_ChamcongNhanviens" ThisKey="Mabangchamcong" OtherKey="Mabangchamcong" Type="PB_ChamcongNhanvien" />
+      <Association Name="PB_Danhsachchamcong_PB_Chamtangca" Member="PB_Chamtangcas" ThisKey="Mabangchamcong" OtherKey="Mabangchamcong" Type="PB_Chamtangca" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Dicongtac" Member="PB_Dicongtacs">
+    <Type Name="PB_Dicongtac">
+      <Column Name="Macongtac" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Veviec" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Noicongtac" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Tungay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Denngay" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tiendicongtac" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_Dicongtac" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_KhautruNhanvien" Member="PB_KhautruNhanviens">
+    <Type Name="PB_KhautruNhanvien">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Makhautru" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenkhautru" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachbangluong_PB_KhautruNhanvien" Member="PB_Danhsachbangluong" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_Danhsachbangluong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_KhenthuongNhanvien" Member="PB_KhenthuongNhanviens">
+    <Type Name="PB_KhenthuongNhanvien">
+      <Column Name="Makhenthuong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaykhenthuong" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tenkhenthuong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Hinhthuckhenthuong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_KhenthuongNhanvien" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_KyluatNhanvien" Member="PB_KyluatNhanviens">
+    <Type Name="PB_KyluatNhanvien">
+      <Column Name="Makyluat" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenkyluat" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayxayra" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaykyluat" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Diadiem" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoichungkien" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Motasuviec" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Hinhthuckyluat" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoibikyluatgiaithich" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_KyluatNhanvien" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Luonglamthem" Member="PB_Luonglamthems">
+    <Type Name="PB_Luonglamthem">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Maluonglamthem" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenluonglamthem" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachbangluong_PB_Luonglamthem" Member="PB_Danhsachbangluong" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_Danhsachbangluong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Luongtangca" Member="PB_Luongtangcas">
+    <Type Name="PB_Luongtangca">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LuongGio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sotangcathuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sotangcachunhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sotangcale" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachbangluong_PB_Luongtangca" Member="PB_Danhsachbangluong" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_Danhsachbangluong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Luongtoithieu" Member="PB_Luongtoithieus">
+    <Type Name="PB_Luongtoithieu">
+      <Column Name="MaLTT" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Nguoithannhanvien" Member="PB_Nguoithannhanviens">
+    <Type Name="PB_Nguoithannhanvien">
+      <Column Name="Manguoithan" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Hotennguoithan" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Quanhe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Dienthoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Phuthuoc" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_Quanhegiadinh_PB_Nguoithannhanvien" Member="DIC_Quanhegiadinh" ThisKey="Quanhe" OtherKey="Maquanhe" Type="DIC_Quanhegiadinh" IsForeignKey="true" />
+      <Association Name="PB_Nhanvien_PB_Nguoithannhanvien" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Nhanvien" Member="PB_Nhanviens">
+    <Type Name="PB_Nhanvien">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HoNV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Bidanh" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Nu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Hinhanh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Noisinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Honnhan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Tamtru" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Dienthoaididong" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Dienthoainha" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SoCMNN" Type="System.String" DbType="Char(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaycap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Noicap" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayvaolam" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Suckhoe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Chieucao" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cannang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhtrang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Maquoctich" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Madantoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Matongiao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mabangcap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mangonngu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Machuyenmon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Matinhoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaToNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BHXH" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHYT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHTN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongdoan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_Chamnghiphep" Member="PB_Chamnghiphep" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Chamnghiphep" Cardinality="One" />
+      <Association Name="PB_Nhanvien_PB_Danhgianhanvien" Member="PB_Danhgianhanviens" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Danhgianhanvien" />
+      <Association Name="PB_Nhanvien_PB_Dicongtac" Member="PB_Dicongtacs" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Dicongtac" />
+      <Association Name="PB_Nhanvien_PB_KhenthuongNhanvien" Member="PB_KhenthuongNhanviens" ThisKey="MaNV" OtherKey="MaNV" Type="PB_KhenthuongNhanvien" />
+      <Association Name="PB_Nhanvien_PB_KyluatNhanvien" Member="PB_KyluatNhanviens" ThisKey="MaNV" OtherKey="MaNV" Type="PB_KyluatNhanvien" />
+      <Association Name="PB_Nhanvien_PB_Nguoithannhanvien" Member="PB_Nguoithannhanviens" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nguoithannhanvien" />
+      <Association Name="PB_Nhanvien_PB_PhucapNhanvien" Member="PB_PhucapNhanviens" ThisKey="MaNV" OtherKey="MaNV" Type="PB_PhucapNhanvien" />
+      <Association Name="PB_Nhanvien_PB_Tainanlaodong" Member="PB_Tainanlaodongs" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Tainanlaodong" />
+      <Association Name="PB_Nhanvien_PB_TamungNhanvien" Member="PB_TamungNhanviens" ThisKey="MaNV" OtherKey="MaNV" Type="PB_TamungNhanvien" />
+      <Association Name="PB_Nhanvien_PB_Thaydoibacluong" Member="PB_Thaydoibacluongs" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Thaydoibacluong" />
+      <Association Name="PB_Nhanvien_PB_Thaydoichucvu" Member="PB_Thaydoichucvus" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Thaydoichucvu" />
+      <Association Name="PB_Nhanvien_PB_Thaydoicongviec" Member="PB_Thaydoicongviecs" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Thaydoicongviec" />
+      <Association Name="PB_Nhanvien_PB_Thaydoiphongban" Member="PB_Thaydoiphongbans" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Thaydoiphongban" />
+      <Association Name="DIC_Bangcap_PB_Nhanvien" Member="DIC_Bangcap" ThisKey="Mabangcap" OtherKey="Mabang" Type="DIC_Bangcap" IsForeignKey="true" />
+      <Association Name="DIC_Chuyenmon_PB_Nhanvien" Member="DIC_Chuyenmon" ThisKey="Machuyenmon" OtherKey="Machuyenmon" Type="DIC_Chuyenmon" IsForeignKey="true" />
+      <Association Name="DIC_Dantoc_PB_Nhanvien" Member="DIC_Dantoc" ThisKey="Madantoc" OtherKey="Madantoc" Type="DIC_Dantoc" IsForeignKey="true" />
+      <Association Name="DIC_Quoctich_PB_Nhanvien" Member="DIC_Quoctich" ThisKey="Maquoctich" OtherKey="Maquoctich" Type="DIC_Quoctich" IsForeignKey="true" />
+      <Association Name="DIC_Tinhoc_PB_Nhanvien" Member="DIC_Tinhoc" ThisKey="Matinhoc" OtherKey="MaTH" Type="DIC_Tinhoc" IsForeignKey="true" />
+      <Association Name="DIC_Tongiao_PB_Nhanvien" Member="DIC_Tongiao" ThisKey="Matongiao" OtherKey="MaTG" Type="DIC_Tongiao" IsForeignKey="true" />
+      <Association Name="DIC_Ngonngu_PB_Nhanvien" Member="DIC_Ngonngu" ThisKey="Mangonngu" OtherKey="Mangonngu" Type="DIC_Ngonngu" IsForeignKey="true" />
+      <Association Name="PB_ToNhom_PB_Nhanvien" Member="PB_ToNhom" ThisKey="MaToNhom" OtherKey="MaToNhom" Type="PB_ToNhom" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Phongban" Member="PB_Phongbans">
+    <Type Name="PB_Phongban">
+      <Column Name="Maphong" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tenphong" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Dienthoai" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Tongsonhanvien" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Phongban_PB_Thaydoiphongban" Member="PB_Thaydoiphongbans" ThisKey="Maphong" OtherKey="Maphong" Type="PB_Thaydoiphongban" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_PhucapNhanvien" Member="PB_PhucapNhanviens">
+    <Type Name="PB_PhucapNhanvien">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Maphucap" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_Phucap_PB_PhucapNhanvien" Member="DIC_Phucap" ThisKey="Maphucap" OtherKey="Maphucap" Type="DIC_Phucap" IsForeignKey="true" />
+      <Association Name="PB_Nhanvien_PB_PhucapNhanvien" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_SoLuong" Member="PB_SoLuongs">
+    <Type Name="PB_SoLuong">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Hesoluong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Tonggiocongthucte" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nghiphep" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BHXH" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHYT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHTN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongdoan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tienthue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Songuoiphuthuoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sotienconlaichiuthue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tiendongthue" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongtac" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tongtamung" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tongphucap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tongthuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Danhsachbangluong_PB_SoLuong" Member="PB_Danhsachbangluong" ThisKey="Mabangluong" OtherKey="Mabangluong" Type="PB_Danhsachbangluong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Tainanlaodong" Member="PB_Tainanlaodongs">
+    <Type Name="PB_Tainanlaodong">
+      <Column Name="Matnld" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Veviec" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayxayra" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Diadiem" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Thiethai" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Thuongtat" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Boithuong" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_Tainanlaodong" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_TamungNhanvien" Member="PB_TamungNhanviens">
+    <Type Name="PB_TamungNhanvien">
+      <Column Name="Matamung" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaytamung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_TamungNhanvien" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Thaydoibacluong" Member="PB_Thaydoibacluongs">
+    <Type Name="PB_Thaydoibacluong">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MaNgach" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BacLuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Hesoluong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_Thaydoibacluong" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Thaydoichucvu" Member="PB_Thaydoichucvus">
+    <Type Name="PB_Thaydoichucvu">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Machucvu" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_Chucvu_PB_Thaydoichucvu" Member="DIC_Chucvu" ThisKey="Machucvu" OtherKey="Machucvu" Type="DIC_Chucvu" IsForeignKey="true" />
+      <Association Name="PB_Nhanvien_PB_Thaydoichucvu" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Thaydoicongviec" Member="PB_Thaydoicongviecs">
+    <Type Name="PB_Thaydoicongviec">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Macongviec" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="DIC_Congviec_PB_Thaydoicongviec" Member="DIC_Congviec" ThisKey="Macongviec" OtherKey="Macongviec" Type="DIC_Congviec" IsForeignKey="true" />
+      <Association Name="PB_Nhanvien_PB_Thaydoicongviec" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Thaydoiphongban" Member="PB_Thaydoiphongbans">
+    <Type Name="PB_Thaydoiphongban">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Maphong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="LyDo" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="PB_Nhanvien_PB_Thaydoiphongban" Member="PB_Nhanvien" ThisKey="MaNV" OtherKey="MaNV" Type="PB_Nhanvien" IsForeignKey="true" />
+      <Association Name="PB_Phongban_PB_Thaydoiphongban" Member="PB_Phongban" ThisKey="Maphong" OtherKey="Maphong" Type="PB_Phongban" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_Thaydoitongsongaychamcong" Member="PB_Thaydoitongsongaychamcongs">
+    <Type Name="PB_Thaydoitongsongaychamcong">
+      <Column Name="Masongay" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tongsongaychamcong" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PB_ToNhom" Member="PB_ToNhoms">
+    <Type Name="PB_ToNhom">
+      <Column Name="MaToNhom" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Maphong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TenToNhom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tongsonhanvien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="PB_ToNhom_PB_Nhanvien" Member="PB_Nhanviens" ThisKey="MaToNhom" OtherKey="MaToNhom" Type="PB_Nhanvien" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_Chucnang" Member="SYS_Chucnangs">
+    <Type Name="SYS_Chucnang">
+      <Column Name="FunctionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="SYS_Chucnang_SYS_Nhatkyhethong" Member="SYS_Nhatkyhethongs" ThisKey="FunctionID" OtherKey="Hanhdong" Type="SYS_Nhatkyhethong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_Hanhdong" Member="SYS_Hanhdongs">
+    <Type Name="SYS_Hanhdong">
+      <Column Name="ActivityID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ActivityName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SYS_Hanhdong_SYS_Nhatkyhethong" Member="SYS_Nhatkyhethongs" ThisKey="ActivityID" OtherKey="Hanhdong" Type="SYS_Nhatkyhethong" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_IndexPage" Member="SYS_IndexPages">
+    <Type Name="SYS_IndexPage">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ContentOfIndex" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_Nguoidung" Member="SYS_Nguoidungs">
+    <Type Name="SYS_Nguoidung">
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.Data.Linq.Binary" DbType="VarBinary(50) NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="IsRequireResetPass" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodeResetPassForget" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfLogin" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="LaterLogin" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsLock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsDelete" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsSuper" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="GhiChu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="SYS_Nguoidung_SYS_PhanQuyen" Member="SYS_PhanQuyens" ThisKey="ID" OtherKey="UserID" Type="SYS_PhanQuyen" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_Nhatkyhethong" Member="SYS_Nhatkyhethongs">
+    <Type Name="SYS_Nhatkyhethong">
+      <Column Name="Username" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Thoigian" Type="System.DateTime" DbType="DateTime NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Chucnang" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Hanhdong" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Doituong" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Association Name="SYS_Chucnang_SYS_Nhatkyhethong" Member="SYS_Chucnang" ThisKey="Hanhdong" OtherKey="FunctionID" Type="SYS_Chucnang" IsForeignKey="true" />
+      <Association Name="SYS_Hanhdong_SYS_Nhatkyhethong" Member="SYS_Hanhdong" ThisKey="Hanhdong" OtherKey="ActivityID" Type="SYS_Hanhdong" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SYS_PhanQuyen" Member="SYS_PhanQuyens">
+    <Type Name="SYS_PhanQuyen">
+      <Column Name="UserID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RollID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Association Name="SYS_Nguoidung_SYS_PhanQuyen" Member="SYS_Nguoidung" ThisKey="UserID" OtherKey="ID" Type="SYS_Nguoidung" IsForeignKey="true" />
+      <Association Name="SYS_Quyen_SYS_PhanQuyen" Member="SYS_Quyen" ThisKey="RollID" OtherKey="ID" Type="SYS_Quyen" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_DIC_Cauhinhcongthuc_HT" Member="View_DIC_Cauhinhcongthuc_HTs">
+    <Type Name="View_DIC_Cauhinhcongthuc_HT">
+      <Column Name="Macauhinh" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHXH" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHYT" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHTN" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="BHXHMAX" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongdoan" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="PhicongdoanMax" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TinhThueTNCN" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Chinguoiphuthuoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tangcathuong" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Tangchunhat" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Tangnghile" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Chucvunguoiky" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Mota" Type="System.String" DbType="NText NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PB_Nhanvien_Thongtincongviec" Member="View_PB_Nhanvien_Thongtincongviecs">
+    <Type Name="View_PB_Nhanvien_Thongtincongviec">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoNV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Nu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhtrang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="BHXH" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHYT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="BHTN" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Phicongdoan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MaToNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Maphong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tenphong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhongbanHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TenToNhom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Machucvu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tenchucvu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucvuHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Macongviec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tencongviec" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CongviecHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MaNgach" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Hesoluong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="BacluongHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="BacLuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TenNgach" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tenbac" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PB_Luongtoithieu_HT" Member="View_PB_Luongtoithieu_HTs">
+    <Type Name="View_PB_Luongtoithieu_HT">
+      <Column Name="MaLTT" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Sotien" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoiky" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayky" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Mota" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PB_Nhanvien_Thaydoichucvu" Member="View_PB_Nhanvien_Thaydoichucvus">
+    <Type Name="View_PB_Nhanvien_Thaydoichucvu">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoNV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Bidanh" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Nu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Machucvu" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IsCurrent" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayapdung" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Tenchucvu" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhtrang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PB_Nhanvien_Thongtincanhan" Member="View_PB_Nhanvien_Thongtincanhans">
+    <Type Name="View_PB_Nhanvien_Thongtincanhan">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoNV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Bidanh" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Nu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Hinhanh" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Noisinh" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Honnhan" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Diachi" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Tamtru" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Dienthoaididong" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Dienthoainha" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SoCMNN" Type="System.String" DbType="Char(9) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaycap" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Ngayvaolam" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Suckhoe" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Chieucao" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Cannang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhtrang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Maquoctich" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Madantoc" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Matongiao" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mabangcap" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Mangonngu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Machuyenmon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Matinhoc" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="GhiChu" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="CreatedByDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CreatedByUser" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Tenbang" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenquoctich" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="TenTH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TenTG" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenchuyenmon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tendantoc" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tenngonngu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Noicap" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.View_PB_Nhanvien_Thongtincoban" Member="View_PB_Nhanvien_Thongtincobans">
+    <Type Name="View_PB_Nhanvien_Thongtincoban">
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="HoNV" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TenNV" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Nu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaysinh" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="MaToNhom" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenToNhom" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Maphong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tenphong" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PhongHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Machucvu" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tenchucvu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ChucvuHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Macongviec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tencongviec" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CongviecHT" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tinhtrang" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Function Name="dbo.sp_PB_ChamcongNhanvien_Insert" Method="sp_PB_ChamcongNhanvien_Insert">
+    <Parameter Name="Mabangchamcong" Parameter="mabangchamcong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Sogiocong" Parameter="sogiocong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sogionghiphep" Parameter="sogionghiphep" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByDate" Parameter="createdByDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PB_Chamtangca_Insert" Method="sp_PB_Chamtangca_Insert">
+    <Parameter Name="Mabangchamcong" Parameter="mabangchamcong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="TCthuong" Parameter="tCthuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TCchunhat" Parameter="tCchunhat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="TCnghile" Parameter="tCnghile" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByDate" Parameter="createdByDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PB_Luongtangca_Insert" Method="sp_PB_Luongtangca_Insert">
+    <Parameter Name="Mabangchamcong" Parameter="mabangchamcong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="LuongGio" Parameter="luongGio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sotangcathuong" Parameter="sotangcathuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sotangcachunhat" Parameter="sotangcachunhat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sotangcale" Parameter="sotangcale" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByDate" Parameter="createdByDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PB_Luongtangca_Insert_One" Method="sp_PB_Luongtangca_Insert_One">
+    <Parameter Name="Mabangluong" Parameter="mabangluong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Luongtoithieu" Parameter="luongtoithieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tongsogioquydinh" Parameter="tongsogioquydinh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sogiotangcathuong" Parameter="sogiotangcathuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sogiotangcachunhat" Parameter="sogiotangcachunhat" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sogiotangcanghile" Parameter="sogiotangcanghile" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByDate" Parameter="createdByDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PB_Luongtangca_Select_All" Method="sp_PB_Luongtangca_Select_All">
+    <Parameter Name="Mabangluong" Parameter="mabangluong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="sp_PB_Luongtangca_Select_AllResult">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="LuongGio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tientangcathuong" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sotangcathuong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tientangcachunhat" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sotangcachunhat" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tientangcanghile" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Sotangcale" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Tongluongtangca" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PB_SoLuong_Insert" Method="sp_PB_SoLuong_Insert">
+    <Parameter Name="Mabangluong" Parameter="mabangluong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Hesoluong" Parameter="hesoluong" Type="System.Double" DbType="Float" />
+    <Parameter Name="Tonggiocongthucte" Parameter="tonggiocongthucte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nghiphep" Parameter="nghiphep" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BHXH" Parameter="bHXH" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="BHYT" Parameter="bHYT" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="BHTN" Parameter="bHTN" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Phicongdoan" Parameter="phicongdoan" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="Tienthue" Parameter="tienthue" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Songuoiphuthuoc" Parameter="songuoiphuthuoc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Sotienconlaichiuthue" Parameter="sotienconlaichiuthue" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tiendongthue" Parameter="tiendongthue" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Phicongtac" Parameter="phicongtac" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tongtamung" Parameter="tongtamung" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tongphucap" Parameter="tongphucap" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tongthuong" Parameter="tongthuong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByDate" Parameter="createdByDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PB_SoLuong_Insert_One" Method="sp_PB_SoLuong_Insert_One">
+    <Parameter Name="Mabangluong" Parameter="mabangluong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="Luongtoithieu" Parameter="luongtoithieu" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tongsogioquydinh" Parameter="tongsogioquydinh" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tonggiocongthucte" Parameter="tonggiocongthucte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Nghiphep" Parameter="nghiphep" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tienbatdautinhthue" Parameter="tienbatdautinhthue" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Tienmoinguoiphuthuoc" Parameter="tienmoinguoiphuthuoc" Type="System.Int32" DbType="Int" />
+    <Parameter Name="BHXH_HS" Parameter="bHXH_HS" Type="System.Double" DbType="Float" />
+    <Parameter Name="BHYT_HS" Parameter="bHYT_HS" Type="System.Double" DbType="Float" />
+    <Parameter Name="BHTN_HS" Parameter="bHTN_HS" Type="System.Double" DbType="Float" />
+    <Parameter Name="BHXHMAX" Parameter="bHXHMAX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Phicongdoan_HS" Parameter="phicongdoan_HS" Type="System.Double" DbType="Float" />
+    <Parameter Name="PhicongdoanMAX" Parameter="phicongdoanMAX" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByDate" Parameter="createdByDate" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_PB_SoLuong_Select_All" Method="sp_PB_SoLuong_Select_All">
+    <Parameter Name="Mabangluong" Parameter="mabangluong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <ElementType Name="sp_PB_SoLuong_Select_AllResult">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Luongcoban" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tonggiocongthucte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nghiphep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBHXH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBHYT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBHTN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienPhicongdoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tienluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienThueTNCN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongtamung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongphucap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongthuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongkhautru" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tienlamthem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phicongtac" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thuclanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PB_SoLuong_Select_Nhanvien" Method="sp_PB_SoLuong_Select_Nhanvien">
+    <Parameter Name="Mabangluong" Parameter="mabangluong" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="MaNV" Parameter="maNV" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="sp_PB_SoLuong_Select_NhanvienResult">
+      <Column Name="Mabangluong" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="MaNV" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="Luongcoban" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tonggiocongthucte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nghiphep" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBHXH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBHYT" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienBHTN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienPhicongdoan" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tienluong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TienThueTNCN" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongtamung" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongphucap" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongthuong" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tongkhautru" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tienlamthem" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Phicongtac" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Thuclanh" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_PB_ToNhom_Tinhsonhanvien" Method="sp_PB_ToNhom_Tinhsonhanvien">
+    <Parameter Name="toid" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SYS_ChangePass" Method="sp_SYS_ChangePass">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NewPassword" Parameter="newPassword" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_SYS_ChangePassResult">
+      <Column Name="err" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SYS_CheckLogin" Method="sp_SYS_CheckLogin">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_SYS_CheckLoginResult">
+      <Column Name="err" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Fullname" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumberOfLogin" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SYS_GetBackPass" Method="sp_SYS_GetBackPass">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="CodeResetPassForget" Parameter="codeResetPassForget" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="NewPassword" Parameter="newPassword" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_SYS_GetBackPassResult">
+      <Column Name="err" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SYS_Nguoidung_Insert" Method="sp_SYS_Nguoidung_Insert">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Fullname" Parameter="fullname" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="IsSuper" Parameter="isSuper" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.String" DbType="NVarChar(255)" />
+    <ElementType Name="sp_SYS_Nguoidung_InsertResult">
+      <Column Name="err" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SYS_Nhatkyhethong_Delete" Method="sp_SYS_Nhatkyhethong_Delete">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="from" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="to" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SYS_Nhatkyhethong_Insert" Method="sp_SYS_Nhatkyhethong_Insert">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="Chucnang" Parameter="chucnang" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Hanhdong" Parameter="hanhdong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Doituong" Parameter="doituong" Type="System.String" DbType="NVarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SYS_ReNewPass" Method="sp_SYS_ReNewPass">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="NewPassword" Parameter="newPassword" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="sp_SYS_ReNewPassResult">
+      <Column Name="err" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.sp_SYS_ResetPass" Method="sp_SYS_ResetPass">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SYS_SetFullRoll" Method="sp_SYS_SetFullRoll">
+    <Parameter Name="UserID" Parameter="userID" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="CreatedByUser" Parameter="createdByUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.sp_SYS_UnInstallRollForUser" Method="sp_SYS_UnInstallRollForUser">
+    <Parameter Name="Username" Parameter="username" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

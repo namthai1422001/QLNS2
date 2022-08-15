@@ -1,0 +1,140 @@
+﻿#BoxSeachPage
+{
+    width: 326px;
+    height: 33px;
+    margin: 5px auto;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+    background-image: url("../images/bgsearch.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-color: #71B300;
+}
+#BoxSeachPage input[type=text]
+{
+    width: 200px;
+    margin: 5px 2px 2px 5px;
+}
+#BoxSeachPage input[type=submit]
+{
+    width: 105px;
+    height: 21px;
+    border: solid 1px #4A8CF8;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+#BoxSeachPage input[type=submit]:hover
+{
+    color: #74B500;
+    cursor: pointer;
+    border-color: #FFAF08;
+}
+
+.search-information
+{
+	background: #d5ffce url('../images/icons/search_icon.png') no-repeat 10px 10px !important;
+}
+
+#SearchResult
+{
+	width: 99%;
+	margin: 10px 5px 0px 5px;
+}
+
+#SearchResult .item
+{
+	display: block;
+	margin-top: 20px;
+	border-bottom: solid 1px #CCCCCC;
+	padding-bottom: 4px;
+	height: 270px;
+	box-shadow: 2px 5px 5px black;
+}
+#SearchResult .item:hover
+{
+	background-color: #FFFF7F;/*#F9F8D2 FFFF7F*/
+}
+#SearchResult .selected
+{
+	background-color: #ffdf8f;
+}
+
+#SearchResult .main-content{padding-left: 130px;padding-top: 3px;}
+
+#SearchResult .item h5
+{
+	background-image: url('../images/navbar-tab-bg.png');
+	color: #FFFFFA;
+	padding-top: 5px;
+	padding-left: 5px;
+	border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+}
+#SearchResult .item h5 span
+{
+    float: right;
+    margin-right: 5px;
+}
+#SearchResult .item .content
+{
+	position: relative;
+}
+
+#SearchResult .item .content .imgNhanvien
+{
+	position: absolute;
+	background-image: url('../images/border-img.png');
+	top: 2px;
+	left: 2px;
+	margin-right: 2px;
+	margin-bottom: 2px;
+	width: 124px;
+	height: 164px;
+}
+
+#SearchResult .item .content .imgNhanvien img
+{
+	width: 116px;
+	height: 155px;
+	padding: 2px;
+	margin-top: 2px;
+	margin-left: 2px;
+}
+
+#SearchResult .left-content
+{
+	border-right: solid 1px #CCCCCC;
+	float: left;
+	width: 260px;
+}
+
+#SearchResult .right-content
+{
+	float: left;
+	margin-left: 10px;
+}
+
+#SearchResult p
+{
+	line-height: 0.7em;
+}
+
+.left-content b
+{
+	display: inline-block;
+	width: 70px;
+}
+.right-content b
+{
+	display: inline-block;
+	width: 165px;
+}
+
+.main-content > p > b
+{
+	display: inline-block;
+	width: 100px;
+}

@@ -1,0 +1,1339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FEC2AE8-6521-48EA-8036-7E463842082C}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>QLNS</RootNamespace>
+    <AssemblyName>QLNS</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CKEditor.NET, Version=3.6.2.0, Culture=neutral, PublicKeyToken=e379cdf2f8354999, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Extrax\ckeditor_aspnet_3.6.2\bin\Debug\CKEditor.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="MSCaptcha, Version=2.0.3733.36001, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\My Documents\Downloads\Compressed\mscaptcha\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="MyURLRewriting, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Example\URLRewriter_src\MyURLRewriting\MyURLRewriting\bin\Debug\MyURLRewriting.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\EditTaikhoan.aspx.cs">
+      <DependentUpon>EditTaikhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\EditTaikhoan.aspx.designer.cs">
+      <DependentUpon>EditTaikhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Nhatkyhethong.aspx.cs">
+      <DependentUpon>Nhatkyhethong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Nhatkyhethong.aspx.designer.cs">
+      <DependentUpon>Nhatkyhethong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Phanquyen.aspx.cs">
+      <DependentUpon>Phanquyen.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Phanquyen.aspx.designer.cs">
+      <DependentUpon>Phanquyen.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Quanlytaikhoan.aspx.cs">
+      <DependentUpon>Quanlytaikhoan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Quanlytaikhoan.aspx.designer.cs">
+      <DependentUpon>Quanlytaikhoan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CaptchaText.aspx.cs">
+      <DependentUpon>CaptchaText.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CaptchaText.aspx.designer.cs">
+      <DependentUpon>CaptchaText.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AccordionMenu.ascx.cs">
+      <DependentUpon>AccordionMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AccordionMenu.ascx.designer.cs">
+      <DependentUpon>AccordionMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Audit.ascx.cs">
+      <DependentUpon>Audit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Audit.ascx.designer.cs">
+      <DependentUpon>Audit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Profile.ascx.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Profile.ascx.designer.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Search.ascx.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Search.ascx.designer.cs">
+      <DependentUpon>Search.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="dbLinQ.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbLinQ.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="DeEncodeBase64.cs" />
+    <Compile Include="DontAllow.aspx.cs">
+      <DependentUpon>DontAllow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DontAllow.aspx.designer.cs">
+      <DependentUpon>DontAllow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditIndex.aspx.cs">
+      <DependentUpon>EditIndex.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditIndex.aspx.designer.cs">
+      <DependentUpon>EditIndex.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgetPassword.aspx.designer.cs">
+      <DependentUpon>ForgetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormRewriter.cs" />
+    <Compile Include="GetTime.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MasterPage.Master.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MasterPage.Master.designer.cs">
+      <DependentUpon>MasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\ChangePass.aspx.cs">
+      <DependentUpon>ChangePass.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\ChangePass.aspx.designer.cs">
+      <DependentUpon>ChangePass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Profile\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profile\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNS\Bacluong.aspx.cs">
+      <DependentUpon>Bacluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Bacluong.aspx.designer.cs">
+      <DependentUpon>Bacluong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Bangcap.aspx.cs">
+      <DependentUpon>Bangcap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Bangcap.aspx.designer.cs">
+      <DependentUpon>Bangcap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Cauhinhcongthuc.aspx.cs">
+      <DependentUpon>Cauhinhcongthuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Cauhinhcongthuc.aspx.designer.cs">
+      <DependentUpon>Cauhinhcongthuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Chamcongngay.aspx.cs">
+      <DependentUpon>Chamcongngay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Chamcongngay.aspx.designer.cs">
+      <DependentUpon>Chamcongngay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Chamcongtangca.aspx.cs">
+      <DependentUpon>Chamcongtangca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Chamcongtangca.aspx.designer.cs">
+      <DependentUpon>Chamcongtangca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Chucvu.aspx.cs">
+      <DependentUpon>Chucvu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Chucvu.aspx.designer.cs">
+      <DependentUpon>Chucvu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Chuyenmon.aspx.cs">
+      <DependentUpon>Chuyenmon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Chuyenmon.aspx.designer.cs">
+      <DependentUpon>Chuyenmon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Congviec.aspx.cs">
+      <DependentUpon>Congviec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Congviec.aspx.designer.cs">
+      <DependentUpon>Congviec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Danhsachbangchamcong.aspx.cs">
+      <DependentUpon>Danhsachbangchamcong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Danhsachbangchamcong.aspx.designer.cs">
+      <DependentUpon>Danhsachbangchamcong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Danhsachbangluong.aspx.cs">
+      <DependentUpon>Danhsachbangluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Danhsachbangluong.aspx.designer.cs">
+      <DependentUpon>Danhsachbangluong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Dantoc.aspx.cs">
+      <DependentUpon>Dantoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Dantoc.aspx.designer.cs">
+      <DependentUpon>Dantoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\DetailDicongtac.aspx.cs">
+      <DependentUpon>DetailDicongtac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\DetailDicongtac.aspx.designer.cs">
+      <DependentUpon>DetailDicongtac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\DetailKhenthuong.aspx.cs">
+      <DependentUpon>DetailKhenthuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\DetailKhenthuong.aspx.designer.cs">
+      <DependentUpon>DetailKhenthuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\DetailKyluat.aspx.cs">
+      <DependentUpon>DetailKyluat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\DetailKyluat.aspx.designer.cs">
+      <DependentUpon>DetailKyluat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\DetailNhanvien.aspx.cs">
+      <DependentUpon>DetailNhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\DetailNhanvien.aspx.designer.cs">
+      <DependentUpon>DetailNhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\DetailTamung.aspx.cs">
+      <DependentUpon>DetailTamung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\DetailTamung.aspx.designer.cs">
+      <DependentUpon>DetailTamung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Dicongtac.aspx.cs">
+      <DependentUpon>Dicongtac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Dicongtac.aspx.designer.cs">
+      <DependentUpon>Dicongtac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditBacluong.aspx.cs">
+      <DependentUpon>EditBacluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditBacluong.aspx.designer.cs">
+      <DependentUpon>EditBacluong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditBangcap.aspx.cs">
+      <DependentUpon>EditBangcap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditBangcap.aspx.designer.cs">
+      <DependentUpon>EditBangcap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditBangchamcong.aspx.cs">
+      <DependentUpon>EditBangchamcong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditBangchamcong.aspx.designer.cs">
+      <DependentUpon>EditBangchamcong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditBangluong.aspx.cs">
+      <DependentUpon>EditBangluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditBangluong.aspx.designer.cs">
+      <DependentUpon>EditBangluong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditCauhinhcongthuc.aspx.cs">
+      <DependentUpon>EditCauhinhcongthuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditCauhinhcongthuc.aspx.designer.cs">
+      <DependentUpon>EditCauhinhcongthuc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditChucvu.aspx.cs">
+      <DependentUpon>EditChucvu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditChucvu.aspx.designer.cs">
+      <DependentUpon>EditChucvu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditChucvunhanvien.aspx.cs">
+      <DependentUpon>EditChucvunhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditChucvunhanvien.aspx.designer.cs">
+      <DependentUpon>EditChucvunhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditChuyenmon.aspx.cs">
+      <DependentUpon>EditChuyenmon.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditChuyenmon.aspx.designer.cs">
+      <DependentUpon>EditChuyenmon.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditCongviec.aspx.cs">
+      <DependentUpon>EditCongviec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditCongviec.aspx.designer.cs">
+      <DependentUpon>EditCongviec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditCongviecnhanvien.aspx.cs">
+      <DependentUpon>EditCongviecnhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditCongviecnhanvien.aspx.designer.cs">
+      <DependentUpon>EditCongviecnhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditDantoc.aspx.cs">
+      <DependentUpon>EditDantoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditDantoc.aspx.designer.cs">
+      <DependentUpon>EditDantoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditDicongtac.aspx.cs">
+      <DependentUpon>EditDicongtac.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditDicongtac.aspx.designer.cs">
+      <DependentUpon>EditDicongtac.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditKhautru.aspx.cs">
+      <DependentUpon>EditKhautru.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditKhautru.aspx.designer.cs">
+      <DependentUpon>EditKhautru.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditKhenthuong.aspx.cs">
+      <DependentUpon>EditKhenthuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditKhenthuong.aspx.designer.cs">
+      <DependentUpon>EditKhenthuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditKyluat.aspx.cs">
+      <DependentUpon>EditKyluat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditKyluat.aspx.designer.cs">
+      <DependentUpon>EditKyluat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditLuonglamthem.aspx.cs">
+      <DependentUpon>EditLuonglamthem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditLuonglamthem.aspx.designer.cs">
+      <DependentUpon>EditLuonglamthem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditLuongtoithieu.aspx.cs">
+      <DependentUpon>EditLuongtoithieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditLuongtoithieu.aspx.designer.cs">
+      <DependentUpon>EditLuongtoithieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditNgachbacnhanvien.aspx.cs">
+      <DependentUpon>EditNgachbacnhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditNgachbacnhanvien.aspx.designer.cs">
+      <DependentUpon>EditNgachbacnhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditNgachluong.aspx.cs">
+      <DependentUpon>EditNgachluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditNgachluong.aspx.designer.cs">
+      <DependentUpon>EditNgachluong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditNgonngu.aspx.cs">
+      <DependentUpon>EditNgonngu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditNgonngu.aspx.designer.cs">
+      <DependentUpon>EditNgonngu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditNguoithan.aspx.cs">
+      <DependentUpon>EditNguoithan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditNguoithan.aspx.designer.cs">
+      <DependentUpon>EditNguoithan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditNhanvien.aspx.cs">
+      <DependentUpon>EditNhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditNhanvien.aspx.designer.cs">
+      <DependentUpon>EditNhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditPhongban.aspx.cs">
+      <DependentUpon>EditPhongban.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditPhongban.aspx.designer.cs">
+      <DependentUpon>EditPhongban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditPhongbannhanvien.aspx.cs">
+      <DependentUpon>EditPhongbannhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditPhongbannhanvien.aspx.designer.cs">
+      <DependentUpon>EditPhongbannhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditPhucap.aspx.cs">
+      <DependentUpon>EditPhucap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditPhucap.aspx.designer.cs">
+      <DependentUpon>EditPhucap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditPhucapnhanvien.aspx.cs">
+      <DependentUpon>EditPhucapnhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditPhucapnhanvien.aspx.designer.cs">
+      <DependentUpon>EditPhucapnhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditQuanhegiadinh.aspx.cs">
+      <DependentUpon>EditQuanhegiadinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditQuanhegiadinh.aspx.designer.cs">
+      <DependentUpon>EditQuanhegiadinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditQuoctich.aspx.cs">
+      <DependentUpon>EditQuoctich.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditQuoctich.aspx.designer.cs">
+      <DependentUpon>EditQuoctich.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditSongaychamcong.aspx.cs">
+      <DependentUpon>EditSongaychamcong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditSongaychamcong.aspx.designer.cs">
+      <DependentUpon>EditSongaychamcong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditTamung.aspx.cs">
+      <DependentUpon>EditTamung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditTamung.aspx.designer.cs">
+      <DependentUpon>EditTamung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditThongtincanhan.aspx.cs">
+      <DependentUpon>EditThongtincanhan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditThongtincanhan.aspx.designer.cs">
+      <DependentUpon>EditThongtincanhan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditTinhoc.aspx.cs">
+      <DependentUpon>EditTinhoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditTinhoc.aspx.designer.cs">
+      <DependentUpon>EditTinhoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditTongiao.aspx.cs">
+      <DependentUpon>EditTongiao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditTongiao.aspx.designer.cs">
+      <DependentUpon>EditTongiao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\EditTonhom.aspx.cs">
+      <DependentUpon>EditTonhom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\EditTonhom.aspx.designer.cs">
+      <DependentUpon>EditTonhom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Khautru.aspx.cs">
+      <DependentUpon>Khautru.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Khautru.aspx.designer.cs">
+      <DependentUpon>Khautru.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Khenthuong.aspx.cs">
+      <DependentUpon>Khenthuong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Khenthuong.aspx.designer.cs">
+      <DependentUpon>Khenthuong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Kyluat.aspx.cs">
+      <DependentUpon>Kyluat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Kyluat.aspx.designer.cs">
+      <DependentUpon>Kyluat.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Luonglamthem.aspx.cs">
+      <DependentUpon>Luonglamthem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Luonglamthem.aspx.designer.cs">
+      <DependentUpon>Luonglamthem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Luongngay.aspx.cs">
+      <DependentUpon>Luongngay.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Luongngay.aspx.designer.cs">
+      <DependentUpon>Luongngay.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Luongtangca.aspx.cs">
+      <DependentUpon>Luongtangca.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Luongtangca.aspx.designer.cs">
+      <DependentUpon>Luongtangca.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Luongtoithieu.aspx.cs">
+      <DependentUpon>Luongtoithieu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Luongtoithieu.aspx.designer.cs">
+      <DependentUpon>Luongtoithieu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Ngachluong.aspx.cs">
+      <DependentUpon>Ngachluong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Ngachluong.aspx.designer.cs">
+      <DependentUpon>Ngachluong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Ngonngu.aspx.cs">
+      <DependentUpon>Ngonngu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Ngonngu.aspx.designer.cs">
+      <DependentUpon>Ngonngu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Nhanvien.aspx.cs">
+      <DependentUpon>Nhanvien.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Nhanvien.aspx.designer.cs">
+      <DependentUpon>Nhanvien.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Phongban.aspx.cs">
+      <DependentUpon>Phongban.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Phongban.aspx.designer.cs">
+      <DependentUpon>Phongban.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Phucap.aspx.cs">
+      <DependentUpon>Phucap.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Phucap.aspx.designer.cs">
+      <DependentUpon>Phucap.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Quanhegiadinh.aspx.cs">
+      <DependentUpon>Quanhegiadinh.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Quanhegiadinh.aspx.designer.cs">
+      <DependentUpon>Quanhegiadinh.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Quatrinhlamviec.aspx.cs">
+      <DependentUpon>Quatrinhlamviec.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Quatrinhlamviec.aspx.designer.cs">
+      <DependentUpon>Quatrinhlamviec.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Quoctich.aspx.cs">
+      <DependentUpon>Quoctich.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Quoctich.aspx.designer.cs">
+      <DependentUpon>Quoctich.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\SearchKey.ashx.cs">
+      <DependentUpon>SearchKey.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Songaychamcong.aspx.cs">
+      <DependentUpon>Songaychamcong.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Songaychamcong.aspx.designer.cs">
+      <DependentUpon>Songaychamcong.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Tamung.aspx.cs">
+      <DependentUpon>Tamung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Tamung.aspx.designer.cs">
+      <DependentUpon>Tamung.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Tinhoc.aspx.cs">
+      <DependentUpon>Tinhoc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Tinhoc.aspx.designer.cs">
+      <DependentUpon>Tinhoc.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Tongiao.aspx.cs">
+      <DependentUpon>Tongiao.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Tongiao.aspx.designer.cs">
+      <DependentUpon>Tongiao.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QLNS\Tonhom.aspx.cs">
+      <DependentUpon>Tonhom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QLNS\Tonhom.aspx.designer.cs">
+      <DependentUpon>Tonhom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Relax.aspx.cs">
+      <DependentUpon>Relax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Relax.aspx.designer.cs">
+      <DependentUpon>Relax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RenewPassword.aspx.cs">
+      <DependentUpon>RenewPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RenewPassword.aspx.designer.cs">
+      <DependentUpon>RenewPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StepBeforeForget.aspx.cs">
+      <DependentUpon>StepBeforeForget.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StepBeforeForget.aspx.designer.cs">
+      <DependentUpon>StepBeforeForget.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Login.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="dbLinQ.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>dbLinQ.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\EditTaikhoan.aspx" />
+    <Content Include="Admin\Nhatkyhethong.aspx" />
+    <Content Include="Admin\Phanquyen.aspx" />
+    <Content Include="Admin\Quanlytaikhoan.aspx" />
+    <Content Include="App_Themes\SkinDefault\SkinDefault.skin" />
+    <Content Include="App_Browsers\Form.browser" />
+    <None Include="ckeditor\.htaccess" />
+    <None Include="css\green\asc.psd" />
+    <None Include="css\green\desc.psd" />
+    <None Include="css\green\green.zip" />
+    <None Include="css\green\none.psd" />
+    <None Include="dbLinQ.dbml.layout">
+      <DependentUpon>dbLinQ.dbml</DependentUpon>
+    </None>
+    <Content Include="CaptchaText.aspx" />
+    <Content Include="css\Search.css" />
+    <Content Include="css\error404.css" />
+    <Content Include="Error.htm" />
+    <Content Include="images\404-error.jpg" />
+    <Content Include="images\bgsearch.JPG" />
+    <Content Include="images\icons\icon.png" />
+    <Content Include="images\navbar-tab-bg.png" />
+    <Content Include="QLNS\Employee-images\NV00000007.JPG" />
+    <Content Include="QLNS\Search.aspx" />
+    <Content Include="QLNS\SearchKey.ashx" />
+    <None Include="packages.config" />
+    <None Include="ui-lightness\images\Thumbs.db" />
+    <Content Include="ckeditor\adapters\jquery.js" />
+    <Content Include="ckeditor\CHANGES.html" />
+    <Content Include="ckeditor\ckeditor.js" />
+    <Content Include="ckeditor\ckeditor_basic.js" />
+    <Content Include="ckeditor\config.js" />
+    <Content Include="ckeditor\contents.css" />
+    <Content Include="ckeditor\images\spacer.gif" />
+    <Content Include="ckeditor\INSTALL.html" />
+    <Content Include="ckeditor\lang\af.js" />
+    <Content Include="ckeditor\lang\ar.js" />
+    <Content Include="ckeditor\lang\bg.js" />
+    <Content Include="ckeditor\lang\bn.js" />
+    <Content Include="ckeditor\lang\bs.js" />
+    <Content Include="ckeditor\lang\ca.js" />
+    <Content Include="ckeditor\lang\cs.js" />
+    <Content Include="ckeditor\lang\cy.js" />
+    <Content Include="ckeditor\lang\da.js" />
+    <Content Include="ckeditor\lang\de.js" />
+    <Content Include="ckeditor\lang\el.js" />
+    <Content Include="ckeditor\lang\en-au.js" />
+    <Content Include="ckeditor\lang\en-ca.js" />
+    <Content Include="ckeditor\lang\en-gb.js" />
+    <Content Include="ckeditor\lang\en.js" />
+    <Content Include="ckeditor\lang\eo.js" />
+    <Content Include="ckeditor\lang\es.js" />
+    <Content Include="ckeditor\lang\et.js" />
+    <Content Include="ckeditor\lang\eu.js" />
+    <Content Include="ckeditor\lang\fa.js" />
+    <Content Include="ckeditor\lang\fi.js" />
+    <Content Include="ckeditor\lang\fo.js" />
+    <Content Include="ckeditor\lang\fr-ca.js" />
+    <Content Include="ckeditor\lang\fr.js" />
+    <Content Include="ckeditor\lang\gl.js" />
+    <Content Include="ckeditor\lang\gu.js" />
+    <Content Include="ckeditor\lang\he.js" />
+    <Content Include="ckeditor\lang\hi.js" />
+    <Content Include="ckeditor\lang\hr.js" />
+    <Content Include="ckeditor\lang\hu.js" />
+    <Content Include="ckeditor\lang\is.js" />
+    <Content Include="ckeditor\lang\it.js" />
+    <Content Include="ckeditor\lang\ja.js" />
+    <Content Include="ckeditor\lang\ka.js" />
+    <Content Include="ckeditor\lang\km.js" />
+    <Content Include="ckeditor\lang\ko.js" />
+    <Content Include="ckeditor\lang\lt.js" />
+    <Content Include="ckeditor\lang\lv.js" />
+    <Content Include="ckeditor\lang\mn.js" />
+    <Content Include="ckeditor\lang\ms.js" />
+    <Content Include="ckeditor\lang\nb.js" />
+    <Content Include="ckeditor\lang\nl.js" />
+    <Content Include="ckeditor\lang\no.js" />
+    <Content Include="ckeditor\lang\pl.js" />
+    <Content Include="ckeditor\lang\pt-br.js" />
+    <Content Include="ckeditor\lang\pt.js" />
+    <Content Include="ckeditor\lang\ro.js" />
+    <Content Include="ckeditor\lang\ru.js" />
+    <Content Include="ckeditor\lang\sk.js" />
+    <Content Include="ckeditor\lang\sl.js" />
+    <Content Include="ckeditor\lang\sr-latn.js" />
+    <Content Include="ckeditor\lang\sr.js" />
+    <Content Include="ckeditor\lang\sv.js" />
+    <Content Include="ckeditor\lang\th.js" />
+    <Content Include="ckeditor\lang\tr.js" />
+    <Content Include="ckeditor\lang\uk.js" />
+    <Content Include="ckeditor\lang\vi.js" />
+    <Content Include="ckeditor\lang\zh-cn.js" />
+    <Content Include="ckeditor\lang\zh.js" />
+    <Content Include="ckeditor\lang\_languages.js" />
+    <Content Include="ckeditor\lang\_translationstatus.txt" />
+    <Content Include="ckeditor\LICENSE.html" />
+    <Content Include="ckeditor\plugins\a11yhelp\dialogs\a11yhelp.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\en.js" />
+    <Content Include="ckeditor\plugins\a11yhelp\lang\he.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\about.js" />
+    <Content Include="ckeditor\plugins\about\dialogs\logo_ckeditor.png" />
+    <Content Include="ckeditor\plugins\adobeair\plugin.js" />
+    <Content Include="ckeditor\plugins\ajax\plugin.js" />
+    <Content Include="ckeditor\plugins\autogrow\plugin.js" />
+    <Content Include="ckeditor\plugins\bbcode\plugin.js" />
+    <Content Include="ckeditor\plugins\clipboard\dialogs\paste.js" />
+    <Content Include="ckeditor\plugins\colordialog\dialogs\colordialog.js" />
+    <Content Include="ckeditor\plugins\devtools\lang\en.js" />
+    <Content Include="ckeditor\plugins\devtools\plugin.js" />
+    <Content Include="ckeditor\plugins\dialog\dialogDefinition.js" />
+    <Content Include="ckeditor\plugins\div\dialogs\div.js" />
+    <Content Include="ckeditor\plugins\docprops\dialogs\docprops.js" />
+    <Content Include="ckeditor\plugins\docprops\plugin.js" />
+    <Content Include="ckeditor\plugins\find\dialogs\find.js" />
+    <Content Include="ckeditor\plugins\flash\dialogs\flash.js" />
+    <Content Include="ckeditor\plugins\flash\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\forms\dialogs\button.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\checkbox.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\form.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\hiddenfield.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\radio.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\select.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textarea.js" />
+    <Content Include="ckeditor\plugins\forms\dialogs\textfield.js" />
+    <Content Include="ckeditor\plugins\forms\images\hiddenfield.gif" />
+    <Content Include="ckeditor\plugins\iframedialog\plugin.js" />
+    <Content Include="ckeditor\plugins\iframe\dialogs\iframe.js" />
+    <Content Include="ckeditor\plugins\iframe\images\placeholder.png" />
+    <Content Include="ckeditor\plugins\image\dialogs\image.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\anchor.js" />
+    <Content Include="ckeditor\plugins\link\dialogs\link.js" />
+    <Content Include="ckeditor\plugins\link\images\anchor.gif" />
+    <Content Include="ckeditor\plugins\liststyle\dialogs\liststyle.js" />
+    <Content Include="ckeditor\plugins\pagebreak\images\pagebreak.gif" />
+    <Content Include="ckeditor\plugins\pastefromword\filter\default.js" />
+    <Content Include="ckeditor\plugins\pastetext\dialogs\pastetext.js" />
+    <Content Include="ckeditor\plugins\placeholder\dialogs\placeholder.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\en.js" />
+    <Content Include="ckeditor\plugins\placeholder\lang\he.js" />
+    <Content Include="ckeditor\plugins\placeholder\placeholder.gif" />
+    <Content Include="ckeditor\plugins\placeholder\plugin.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\options.js" />
+    <Content Include="ckeditor\plugins\scayt\dialogs\toolbar.css" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_address.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_blockquote.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_div.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h1.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h2.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h3.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h4.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h5.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_h6.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_p.png" />
+    <Content Include="ckeditor\plugins\showblocks\images\block_pre.png" />
+    <Content Include="ckeditor\plugins\smiley\dialogs\smiley.js" />
+    <Content Include="ckeditor\plugins\smiley\images\angel_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\angry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\broken_heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\confused_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\cry_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\devil_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\embaressed_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\envelope.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\heart.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\kiss.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\lightbulb.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\omg_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\regular_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\sad_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\shades_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\teeth_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_down.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\thumbs_up.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\tounge_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\whatchutalkingabout_smile.gif" />
+    <Content Include="ckeditor\plugins\smiley\images\wink_smile.gif" />
+    <Content Include="ckeditor\plugins\specialchar\dialogs\specialchar.js" />
+    <Content Include="ckeditor\plugins\specialchar\lang\en.js" />
+    <Content Include="ckeditor\plugins\stylesheetparser\plugin.js" />
+    <Content Include="ckeditor\plugins\styles\styles\default.js" />
+    <Content Include="ckeditor\plugins\tableresize\plugin.js" />
+    <Content Include="ckeditor\plugins\tabletools\dialogs\tableCell.js" />
+    <Content Include="ckeditor\plugins\table\dialogs\table.js" />
+    <Content Include="ckeditor\plugins\templates\dialogs\templates.js" />
+    <Content Include="ckeditor\plugins\templates\templates\default.js" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template1.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template2.gif" />
+    <Content Include="ckeditor\plugins\templates\templates\images\template3.gif" />
+    <Content Include="ckeditor\plugins\uicolor\dialogs\uicolor.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\en.js" />
+    <Content Include="ckeditor\plugins\uicolor\lang\he.js" />
+    <Content Include="ckeditor\plugins\uicolor\plugin.js" />
+    <Content Include="ckeditor\plugins\uicolor\uicolor.gif" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_bg.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\hue_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_mask.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\picker_thumb.png" />
+    <Content Include="ckeditor\plugins\uicolor\yui\assets\yui.css" />
+    <Content Include="ckeditor\plugins\uicolor\yui\yui.js" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\ciframe.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\tmpFrameset.html" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.css" />
+    <Content Include="ckeditor\plugins\wsc\dialogs\wsc.js" />
+    <Content Include="ckeditor\plugins\xml\plugin.js" />
+    <Content Include="ckeditor\skins\kama\dialog.css" />
+    <Content Include="ckeditor\skins\kama\editor.css" />
+    <Content Include="ckeditor\skins\kama\icons.png" />
+    <Content Include="ckeditor\skins\kama\icons_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\kama\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\kama\images\mini.gif" />
+    <Content Include="ckeditor\skins\kama\images\noimage.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites.png" />
+    <Content Include="ckeditor\skins\kama\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\kama\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\kama\skin.js" />
+    <Content Include="ckeditor\skins\kama\templates.css" />
+    <Content Include="ckeditor\skins\office2003\dialog.css" />
+    <Content Include="ckeditor\skins\office2003\editor.css" />
+    <Content Include="ckeditor\skins\office2003\icons.png" />
+    <Content Include="ckeditor\skins\office2003\icons_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\office2003\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\office2003\images\mini.gif" />
+    <Content Include="ckeditor\skins\office2003\images\noimage.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites.png" />
+    <Content Include="ckeditor\skins\office2003\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\office2003\skin.js" />
+    <Content Include="ckeditor\skins\office2003\templates.css" />
+    <Content Include="ckeditor\skins\v2\dialog.css" />
+    <Content Include="ckeditor\skins\v2\editor.css" />
+    <Content Include="ckeditor\skins\v2\icons.png" />
+    <Content Include="ckeditor\skins\v2\icons_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.gif" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides.png" />
+    <Content Include="ckeditor\skins\v2\images\dialog_sides_rtl.png" />
+    <Content Include="ckeditor\skins\v2\images\mini.gif" />
+    <Content Include="ckeditor\skins\v2\images\noimage.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites.png" />
+    <Content Include="ckeditor\skins\v2\images\sprites_ie6.png" />
+    <Content Include="ckeditor\skins\v2\images\toolbar_start.gif" />
+    <Content Include="ckeditor\skins\v2\skin.js" />
+    <Content Include="ckeditor\skins\v2\templates.css" />
+    <Content Include="ckeditor\themes\default\theme.js" />
+    <Content Include="Controls\AccordionMenu.ascx" />
+    <Content Include="Controls\Audit.ascx" />
+    <Content Include="Controls\Profile.ascx" />
+    <Content Include="Controls\Search.ascx" />
+    <Content Include="css\blue\black-asca.gif" />
+    <Content Include="css\blue\black-bg.gif" />
+    <Content Include="css\blue\black-desc.gif" />
+    <Content Include="css\blue\style.css" />
+    <Content Include="css\blue\white-asc.gif" />
+    <Content Include="css\blue\white-bg.gif" />
+    <Content Include="css\blue\white-desc.gif" />
+    <Content Include="css\green\asc.png" />
+    <Content Include="css\green\bkgd.png" />
+    <Content Include="css\green\desc.png" />
+    <Content Include="css\green\none.png" />
+    <Content Include="css\green\style.css" />
+    <Content Include="css\invalid.css" />
+    <Content Include="css\modalbox.css" />
+    <Content Include="css\reset.css" />
+    <Content Include="css\style.css" />
+    <Content Include="css\styleByMe.css" />
+    <Content Include="css\thickbox.css" />
+    <Content Include="css\TreeView.css" />
+    <Content Include="css\ui\style.css" />
+    <Content Include="DontAllow.aspx" />
+    <Content Include="EditIndex.aspx" />
+    <Content Include="ForgetPassword.aspx" />
+    <Content Include="images\3dSkull.jpg" />
+    <Content Include="images\b.png" />
+    <Content Include="images\bg-body.gif" />
+    <Content Include="images\bg-button-green.gif" />
+    <Content Include="images\bg-content-box.gif" />
+    <Content Include="images\bg-form-field.gif" />
+    <Content Include="images\bg-login-top.png" />
+    <Content Include="images\bg-login.gif" />
+    <Content Include="images\bg-menu-item-current.gif" />
+    <Content Include="images\bg-menu-item-green.gif" />
+    <Content Include="images\bg-radial-gradient.gif" />
+    <Content Include="images\bg-sidebar.gif" />
+    <Content Include="images\bl.png" />
+    <Content Include="images\border-img.png" />
+    <Content Include="images\br.png" />
+    <Content Include="images\changshin.jpg" />
+    <Content Include="images\dad2.jpg" />
+    <Content Include="images\HeaderGlassBlack.jpg" />
+    <Content Include="images\icons\arrow-up.png" />
+    <Content Include="images\icons\arrow_circle_double.png" />
+    <Content Include="images\icons\bullet_black.png" />
+    <Content Include="images\icons\clock_48.png" />
+    <Content Include="images\icons\Collapse.gif" />
+    <Content Include="images\icons\comment_48.png" />
+    <Content Include="images\icons\cross.png" />
+    <Content Include="images\icons\cross_circle.png" />
+    <Content Include="images\icons\cross_grey_small.png" />
+    <Content Include="images\icons\error.gif" />
+    <Content Include="images\icons\errorleft.gif" />
+    <Content Include="images\icons\errortop.gif" />
+    <Content Include="images\icons\exclamation.png" />
+    <Content Include="images\icons\Expand.gif" />
+    <Content Include="images\icons\female.png" />
+    <Content Include="images\icons\female16x16.png" />
+    <Content Include="images\icons\female32x32.png" />
+    <Content Include="images\icons\finished.png" />
+    <Content Include="images\icons\hammer_screwdriver.png" />
+    <Content Include="images\icons\image_add_48.png" />
+    <Content Include="images\icons\information.png" />
+    <Content Include="images\icons\jquery.wysiwyg.gif" />
+    <Content Include="images\icons\lock.png" />
+    <Content Include="images\icons\macFFBgHack.png" />
+    <Content Include="images\icons\male.png" />
+    <Content Include="images\icons\male16x16.png" />
+    <Content Include="images\icons\male32x32.png" />
+    <Content Include="images\icons\none.PNG" />
+    <Content Include="images\icons\paper_content_pencil_48.png" />
+    <Content Include="images\icons\pencil.png" />
+    <Content Include="images\icons\pencil_48.png" />
+    <Content Include="images\icons\search_icon.png" />
+    <Content Include="images\icons\super.png" />
+    <Content Include="images\icons\tick_circle.png" />
+    <Content Include="images\icons\unfinished.png" />
+    <Content Include="images\icons\unlock.png" />
+    <Content Include="images\loadingAnimation.gif" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\menu-current-arrow.gif" />
+    <Content Include="images\shortcut-button-bg.gif" />
+    <Content Include="images\tl.png" />
+    <Content Include="images\toolbar_round_gradient.png" />
+    <Content Include="images\tr.png" />
+    <Content Include="Index.aspx" />
+    <Content Include="le-frog_Green\images\ui-bg_diagonals-small_0_aaaaaa_40x40.png" />
+    <Content Include="le-frog_Green\images\ui-bg_diagonals-thick_15_444444_40x40.png" />
+    <Content Include="le-frog_Green\images\ui-bg_diagonals-thick_95_ffdc2e_40x40.png" />
+    <Content Include="le-frog_Green\images\ui-bg_glass_55_fbf5d0_1x400.png" />
+    <Content Include="le-frog_Green\images\ui-bg_highlight-hard_30_285c00_1x100.png" />
+    <Content Include="le-frog_Green\images\ui-bg_highlight-soft_33_3a8104_1x100.png" />
+    <Content Include="le-frog_Green\images\ui-bg_highlight-soft_50_4eb305_1x100.png" />
+    <Content Include="le-frog_Green\images\ui-bg_highlight-soft_60_4ca20b_1x100.png" />
+    <Content Include="le-frog_Green\images\ui-bg_inset-soft_10_285c00_1x100.png" />
+    <Content Include="le-frog_Green\images\ui-icons_4eb305_256x240.png" />
+    <Content Include="le-frog_Green\images\ui-icons_72b42d_256x240.png" />
+    <Content Include="le-frog_Green\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="le-frog_Green\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="le-frog_Green\jquery-ui.css" />
+    <Content Include="le-frog_Green\jquery.ui.accordion.css" />
+    <Content Include="le-frog_Green\jquery.ui.all.css" />
+    <Content Include="le-frog_Green\jquery.ui.autocomplete.css" />
+    <Content Include="le-frog_Green\jquery.ui.base.css" />
+    <Content Include="le-frog_Green\jquery.ui.button.css" />
+    <Content Include="le-frog_Green\jquery.ui.core.css" />
+    <Content Include="le-frog_Green\jquery.ui.datepicker.css" />
+    <Content Include="le-frog_Green\jquery.ui.dialog.css" />
+    <Content Include="le-frog_Green\jquery.ui.progressbar.css" />
+    <Content Include="le-frog_Green\jquery.ui.resizable.css" />
+    <Content Include="le-frog_Green\jquery.ui.selectable.css" />
+    <Content Include="le-frog_Green\jquery.ui.slider.css" />
+    <Content Include="le-frog_Green\jquery.ui.tabs.css" />
+    <Content Include="le-frog_Green\jquery.ui.theme.css" />
+    <Content Include="Logout.aspx" />
+    <Content Include="MasterPage.Master" />
+    <Content Include="Profile\ChangePass.aspx" />
+    <Content Include="Profile\Detail.aspx" />
+    <Content Include="QLNS\Bacluong.aspx" />
+    <Content Include="QLNS\Bangcap.aspx" />
+    <Content Include="QLNS\Cauhinhcongthuc.aspx" />
+    <Content Include="QLNS\Chamcongngay.aspx" />
+    <Content Include="QLNS\Chamcongtangca.aspx" />
+    <Content Include="QLNS\Chucvu.aspx" />
+    <Content Include="QLNS\Chuyenmon.aspx" />
+    <Content Include="QLNS\Congviec.aspx" />
+    <Content Include="QLNS\Danhsachbangchamcong.aspx" />
+    <Content Include="QLNS\Danhsachbangluong.aspx" />
+    <Content Include="QLNS\Dantoc.aspx" />
+    <Content Include="QLNS\DetailDicongtac.aspx" />
+    <Content Include="QLNS\DetailKhenthuong.aspx" />
+    <Content Include="QLNS\DetailKyluat.aspx" />
+    <Content Include="QLNS\DetailNhanvien.aspx" />
+    <Content Include="QLNS\DetailTamung.aspx" />
+    <Content Include="QLNS\Dicongtac.aspx" />
+    <Content Include="QLNS\EditBacluong.aspx" />
+    <Content Include="QLNS\EditBangcap.aspx" />
+    <Content Include="QLNS\EditBangchamcong.aspx" />
+    <Content Include="QLNS\EditBangluong.aspx" />
+    <Content Include="QLNS\EditCauhinhcongthuc.aspx" />
+    <Content Include="QLNS\EditChucvu.aspx" />
+    <Content Include="QLNS\EditChucvunhanvien.aspx" />
+    <Content Include="QLNS\EditChuyenmon.aspx" />
+    <Content Include="QLNS\EditCongviec.aspx" />
+    <Content Include="QLNS\EditCongviecnhanvien.aspx" />
+    <Content Include="QLNS\EditDantoc.aspx" />
+    <Content Include="QLNS\EditDicongtac.aspx" />
+    <Content Include="QLNS\EditKhautru.aspx" />
+    <Content Include="QLNS\EditKhenthuong.aspx" />
+    <Content Include="QLNS\EditKyluat.aspx" />
+    <Content Include="QLNS\EditLuonglamthem.aspx" />
+    <Content Include="QLNS\EditLuongtoithieu.aspx" />
+    <Content Include="QLNS\EditNgachbacnhanvien.aspx" />
+    <Content Include="QLNS\EditNgachluong.aspx" />
+    <Content Include="QLNS\EditNgonngu.aspx" />
+    <Content Include="QLNS\EditNguoithan.aspx" />
+    <Content Include="QLNS\EditNhanvien.aspx" />
+    <Content Include="QLNS\EditPhongban.aspx" />
+    <Content Include="QLNS\EditPhongbannhanvien.aspx" />
+    <Content Include="QLNS\EditPhucap.aspx" />
+    <Content Include="QLNS\EditPhucapnhanvien.aspx" />
+    <Content Include="QLNS\EditQuanhegiadinh.aspx" />
+    <Content Include="QLNS\EditQuoctich.aspx" />
+    <Content Include="QLNS\EditSongaychamcong.aspx" />
+    <Content Include="QLNS\EditTamung.aspx" />
+    <Content Include="QLNS\EditThongtincanhan.aspx" />
+    <Content Include="QLNS\EditTinhoc.aspx" />
+    <Content Include="QLNS\EditTongiao.aspx" />
+    <Content Include="QLNS\EditTonhom.aspx" />
+    <Content Include="QLNS\Employee-images\chuaco.png" />
+    <Content Include="QLNS\Employee-images\NV00000001.jpg" />
+    <Content Include="QLNS\Employee-images\NV00000002.JPG" />
+    <Content Include="QLNS\Employee-images\NV00000003.JPG" />
+    <Content Include="QLNS\Employee-images\NV00000004.JPG" />
+    <Content Include="QLNS\Employee-images\NV00000005.JPG" />
+    <Content Include="QLNS\Employee-images\NV00000006.JPG" />
+    <Content Include="QLNS\Khautru.aspx" />
+    <Content Include="QLNS\Khenthuong.aspx" />
+    <Content Include="QLNS\Kyluat.aspx" />
+    <Content Include="QLNS\Luonglamthem.aspx" />
+    <Content Include="QLNS\Luongngay.aspx" />
+    <Content Include="QLNS\Luongtangca.aspx" />
+    <Content Include="QLNS\Luongtoithieu.aspx" />
+    <Content Include="QLNS\Ngachluong.aspx" />
+    <Content Include="QLNS\Ngonngu.aspx" />
+    <Content Include="QLNS\Nhanvien.aspx" />
+    <Content Include="QLNS\Phongban.aspx" />
+    <Content Include="QLNS\Phucap.aspx" />
+    <Content Include="QLNS\Quanhegiadinh.aspx" />
+    <Content Include="QLNS\Quatrinhlamviec.aspx" />
+    <Content Include="QLNS\Quoctich.aspx" />
+    <Content Include="QLNS\Songaychamcong.aspx" />
+    <Content Include="QLNS\Tamung.aspx" />
+    <Content Include="QLNS\Tinhoc.aspx" />
+    <Content Include="QLNS\Tongiao.aspx" />
+    <Content Include="QLNS\Tonhom.aspx" />
+    <Content Include="Relax.aspx" />
+    <Content Include="RenewPassword.aspx" />
+    <Content Include="scripts\EmployeeDetail.js" />
+    <Content Include="scripts\facebox.js" />
+    <Content Include="scripts\inputnumber.js" />
+    <Content Include="scripts\jquery-1.7.2.min.js" />
+    <Content Include="scripts\jquery.bgiframe-2.1.2.js" />
+    <Content Include="scripts\jquery.date.js" />
+    <Content Include="scripts\jquery.datePicker.js" />
+    <Content Include="scripts\jquery.effects.blind.js" />
+    <Content Include="scripts\jquery.effects.clip.js" />
+    <Content Include="scripts\jquery.effects.core.js" />
+    <Content Include="scripts\jquery.effects.explode.js" />
+    <Content Include="scripts\jquery.metadata.js" />
+    <Content Include="scripts\jquery.tablesorter.js" />
+    <Content Include="scripts\jquery.tablesorter.min.js" />
+    <Content Include="scripts\jquery.tablesorter.widgets.js" />
+    <Content Include="scripts\jquery.tablesorter.widgets.min.js" />
+    <Content Include="scripts\jquery.ui.autocomplete.js" />
+    <Content Include="scripts\jquery.ui.core.js" />
+    <Content Include="scripts\jquery.ui.datepicker-vi.js" />
+    <Content Include="scripts\jquery.ui.datepicker.js" />
+    <Content Include="scripts\jquery.ui.dialog.js" />
+    <Content Include="scripts\jquery.ui.draggable.js" />
+    <Content Include="scripts\jquery.ui.mouse.js" />
+    <Content Include="scripts\jquery.ui.position.js" />
+    <Content Include="scripts\jquery.ui.widget.js" />
+    <Content Include="scripts\jquery.wysiwyg.js" />
+    <Content Include="scripts\login.js" />
+    <Content Include="scripts\money.js" />
+    <Content Include="scripts\searchbox.js" />
+    <Content Include="scripts\simpla.jquery.configuration.js" />
+    <Content Include="scripts\thickbox.js" />
+    <Content Include="scripts\TreeView.js" />
+    <Content Include="scripts\unittest.js" />
+    <Content Include="StepBeforeForget.aspx" />
+    <Content Include="ui-lightness\images\process.gif" />
+    <Content Include="ui-lightness\images\processing.gif" />
+    <Content Include="ui-lightness\images\processs.gif" />
+    <Content Include="ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="ui-lightness\jquery-ui-1.8.16.custom.css" />
+    <Content Include="ui-lightness\jquery.ui.accordion.css" />
+    <Content Include="ui-lightness\jquery.ui.all.css" />
+    <Content Include="ui-lightness\jquery.ui.autocomplete.css" />
+    <Content Include="ui-lightness\jquery.ui.base.css" />
+    <Content Include="ui-lightness\jquery.ui.button.css" />
+    <Content Include="ui-lightness\jquery.ui.core.css" />
+    <Content Include="ui-lightness\jquery.ui.datepicker.css" />
+    <Content Include="ui-lightness\jquery.ui.dialog.css" />
+    <Content Include="ui-lightness\jquery.ui.progressbar.css" />
+    <Content Include="ui-lightness\jquery.ui.resizable.css" />
+    <Content Include="ui-lightness\jquery.ui.selectable.css" />
+    <Content Include="ui-lightness\jquery.ui.slider.css" />
+    <Content Include="ui-lightness\jquery.ui.tabs.css" />
+    <Content Include="ui-lightness\jquery.ui.theme.css" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="flash\" />
+    <Folder Include="images\bonus\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>9602</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
